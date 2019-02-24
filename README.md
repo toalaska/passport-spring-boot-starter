@@ -1,5 +1,7 @@
 # quick start
+
 pom.xml中添加
+
     <dependency>
         <groupId>net.toalaska</groupId>
         <artifactId>passport-spring-boot-starter</artifactId>
