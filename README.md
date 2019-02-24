@@ -9,6 +9,7 @@ pom.xml中添加
     </dependency>
     
 调用
+
      @Autowired
      PassportClient passportClient;
      
