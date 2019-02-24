@@ -1,16 +1,16 @@
-package net.toalaska.passport.repository;
+package net.toalaska.passport;
 
 import net.toalaska.passport.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-/**
- * Created by fan.jin on 2016-10-15.
- */
+
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
     User findByUserId(String userId);
 
-    User findByUserIdAndUserToken(String userId);
+    User findByUserIdAndUserToken(String userId,String userToken);
 
 }
 

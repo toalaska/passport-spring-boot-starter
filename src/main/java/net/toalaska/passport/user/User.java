@@ -2,25 +2,28 @@ package net.toalaska.passport.user;
 
 
 
-import org.springframework.data.annotation.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 
 import javax.persistence.*;
-import java.sql.Timestamp;
-import java.util.Collection;
-import java.util.List;
 
-/**
- * Created by fan.jin on 2016-10-15.
- */
+
+
 
 @Entity
 @Table(name="net_passport_user")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User   {
 
+
+
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     @Column(name = "username")
