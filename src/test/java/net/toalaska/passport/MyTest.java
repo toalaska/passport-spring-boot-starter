@@ -1,8 +1,6 @@
 package net.toalaska.passport;
 
 
-import net.toalaska.passport.exception.UserExistsException;
-import net.toalaska.passport.user.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +24,11 @@ public class MyTest {
         }
         assert user.getUsername().equals("sgzh");
         assert user.getPassword().equals("123456");
+
+        for (User user1 : passportClient.list()) {
+            System.out.printf(">>>>>>>>>>>>>>>> item: %s\n",user1.toString());
+        }
     }
+
+
 }

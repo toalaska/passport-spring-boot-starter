@@ -1,14 +1,12 @@
 package net.toalaska.passport;
 
-import net.toalaska.passport.exception.UserExistsException;
-import net.toalaska.passport.exception.UserNotExistsException;
-import net.toalaska.passport.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 import java.util.UUID;
 
+@Component
 public class PassportClient {
     @Autowired
     UserRepository userRepository;
@@ -48,16 +46,23 @@ public class PassportClient {
     }
 
     public void logout(String userId,String userToken){
+        User user = userRepository.findByUserIdAndUserToken(userId,userToken);
+        if(user!=null){
+            userRepository.delete(user);
+        }
 
     }
 
     //admin
-    public void get(String userId){
+    public User get(String userId){
 
-    }public void getByUserName(String userName){
-
+        return userRepository.findByUserId(userId);
     }
-    public Map<String,String> list(){
-        return new HashMap<String, String>();
+    public User getByUserName(String userName){
+        return userRepository.findByUsername(userName);
+    }
+    public List<User> list(){
+
+        return   userRepository.findAll();
     }
 }

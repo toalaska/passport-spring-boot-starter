@@ -1,6 +1,5 @@
 package net.toalaska.passport;
 
-import net.toalaska.passport.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

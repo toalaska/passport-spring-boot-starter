@@ -1,4 +1,4 @@
-package net.toalaska.passport.exception;
+package net.toalaska.passport;
 
 public class UserExistsException extends Exception {
 

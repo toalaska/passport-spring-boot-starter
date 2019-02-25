@@ -1,4 +1,4 @@
-package net.toalaska.passport.user;
+package net.toalaska.passport;
 
 
 
