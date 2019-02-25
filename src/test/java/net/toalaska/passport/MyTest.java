@@ -24,6 +24,7 @@ public class MyTest {
         } catch (UserExistsException e) {
             e.printStackTrace();
         }
-        System.out.println( user.getUserId());
+        assert user.getUsername().equals("sgzh");
+        assert user.getPassword().equals("123456");
     }
 }
